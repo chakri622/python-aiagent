@@ -1,0 +1,14 @@
+from phi.agent import Agent
+from phi.model.groq import Groq
+from dotenv import load_dotenv
+import os
+
+
+groq_api_key = os.getenv("GROQ_API_KEY")
+#load_dotenv()
+agent=Agent(
+    name='my_agent',
+    model=Groq(id="llama-3.1-70b-versatile")
+)
+
+agent.print_response("Write 2 sentence poem for the love between dosa and samosa")
